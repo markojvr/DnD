@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP vir DnD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: red;
+            font-size: 48px;
+            text-transform: uppercase;
+        }
+        .form-container {
+            background-color: rgba(255, 0, 0, 0.1);
+            padding: 20px;
+            border: 2px solid red;
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            font-size: 16px;
+        }
+        .submit-btn {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+        }
+        .submit-btn:hover {
+            background-color: darkred;
+        }
+        .terug{
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>RSVP vir Donner n Durbie</h1>
+    <p>Sign op om details te ontvang.</p>
+
+    <div class="form-container">
+        
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfLj03ng_0Kq2KYC9jiVRjBTc9nifV1BaWqVS6PhE0wzh4Arg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+            <label for="name">Naam en van</label>
+            <input type="text" id="name" name="entry.1123350909" required>
+
+            <label for="number">Foon nommer</label>
+            <input type="text" id="number" name="entry.311433261" required>
+
+            <label for="ready">Hoekom is jy hier?</label>
+            <select id="ready" name="entry.877086558" required>
+                <option value="Om iemand te donner">Om iemand te donner</option>
+                <option value="Om te kyk">Om te kyk</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <iframe name="hidden_iframe" style="display: none;"></iframe>
+    <script>
+        // Automatically redirect user after form submission to the custom confirmation page
+        document.querySelector('form').onsubmit = function() {
+            setTimeout(function() {
+                window.location.href = "dankie.html"; // The confirmation page URL
+            }, 1000);  // Small delay to allow form submission before redirection
+        };
+    </script>
+</body>
+</html>
